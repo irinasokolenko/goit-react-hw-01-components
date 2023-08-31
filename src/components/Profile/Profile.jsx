@@ -1,7 +1,18 @@
-<BrowserRouter basename="/goit-react-hw-01-components">
-  <App />
-</BrowserRouter>
-function Profile({ username, tag, location, avatar, stats }) {
+import PropTypes from 'prop-types';
+import {
+  ProfileWrap,
+  Description,
+  Avatar,
+  Name,
+  Tag,
+  Location,
+  Stats,
+  ListItem,
+  Label,
+  Quantity,
+} from './Profile.styled';
+
+const Profile = ({ username, tag, location, avatar, stats }) => {
   return (
     <ProfileWrap>
       <Description>
@@ -14,16 +25,21 @@ function Profile({ username, tag, location, avatar, stats }) {
       <Stats>
         <ListItem>
           <Label>Followers</Label>
-          <Quanyity>{stats.followers}</Quanyity>
+          <Quantity>{stats.followers}</Quantity>
         </ListItem>
         <ListItem>
-          <label>Likes</label>
-          <Quanyity>{stats.likes}</Quanyity>
+          <Label>Views</Label>
+          <Quantity>{stats.views}</Quantity>
+        </ListItem>
+        <ListItem>
+          <Label>Likes</Label>
+          <Quantity>{stats.likes}</Quantity>
         </ListItem>
       </Stats>
     </ProfileWrap>
   );
 };
+
 Profile.propTypes = {
   username: PropTypes.string.isRequired,
   tag: PropTypes.string.isRequired,
