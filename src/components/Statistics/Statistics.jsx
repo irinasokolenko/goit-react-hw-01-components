@@ -9,33 +9,25 @@ import {
   Percentage,
 } from './Statistics.styled';
 
-const Statistics = ({ stats }) => {
+export const Statistics = ({ title, stats}) => {
   return (
-    <StatisticsSection>
-      <Title>Upload stats</Title>
-      <StatList>
-        {stats.map(stat => (
-          <StatItem
-            key={stat.id}
-            style={{ backgroundColor: getRandomHexColor() }}
-          >
-            <Label>{stat.label}</Label>
-            <Percentage>{stat.percentage}%</Percentage>
-          </StatItem>
-        ))}
-      </StatList>
-    </StatisticsSection>
+      <StatisticsWrapper>
+          {title && <StatisticsTitle>{title}</StatisticsTitle>}
+          
+          <StatList>
+              {stats.map(({id,label,percentage}) => {
+                   return (<StatItem key={id} style={{backgroundColor: getRandomHexColor()}}>
+                      <ItemLabel>{label}</ItemLabel>
+                      <ItemPercentage>{percentage}%</ItemPercentage>
+                  </StatItem>)  
+               })
+              }
+          </StatList>
+      </StatisticsWrapper>
   );
-};
+}
 
 Statistics.propTypes = {
-  stats: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      percentage: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};
-
-export default Statistics;
+  title: PropTypes.string,
+  stats: PropTypes.array
+}
