@@ -1,14 +1,13 @@
-import user from './Profile/user.json';
-import Profile from './Profile/Profile';
+import user from '../assets/user.json';
+import data from '../assets/data.json';
+import friends from '../assets/friends.json';
+import transactions from '../assets/transactions.json';
 
-import data from './Statistics/data.json';
-import Statistics from './Statistics/Statistics';
-
-import friends from './FriendList/friends.json';
-import FriendList from './FriendList/FriendList';
-
-import transactions from './TransactionHistory/transactions.json';
-import TransactionHistory from './TransactionHistory/TransactionHistory';
+import { Profile } from "./Profile/Profile";
+import { Statistics } from './Statistics/Statistics';
+import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+import { Container, Wrapper } from './App.module';
 
 export default function App() {
   return (
