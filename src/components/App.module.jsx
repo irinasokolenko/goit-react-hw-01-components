@@ -10,4 +10,4 @@ export const Wrapper = styled.div`
   @media screen and (min-width: 425px){
     display: flex;
     justify-content: space-between
-  };
+}
