@@ -4,7 +4,7 @@ import friends from './assets/friends.json';
 import transactions from './assets/transactions.json';
 
 import { Profile } from "./Profile/Profile";
-import { Statistics } from './Statistics/Statistics';
+
 import { FriendList } from './FriendList/FriendList';
 import { TransactionHistory } from './TransactionHistory/TransactionHistory';
 import { Container, Wrapper } from './App.module';
@@ -20,10 +20,10 @@ export const App = () => {
         stats={user.stats}
       />
     
-      <Statistics 
+      Statistics 
         title='UPLOAD STATS'
-        stats={data}
-      />
+        stats={data} 
+      /
 
       <Wrapper>
         <FriendList
