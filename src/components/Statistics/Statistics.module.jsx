@@ -1,53 +1,49 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-export const StatisticsSection = styled.section`
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
-  padding: 60px 60px;
-  background-color: blanchedalmond;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-`;
+export const StatisticsWrapper = styled.section`
+  margin: 24px auto;
+  padding: 12px;
 
-export const Title = styled.h2`
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  text-align: center;
-  text-transform: uppercase;
-  background-color: white;
-  font-size: 20px;
-  font-weight: 700;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-`;
-
+  background: rgba(142, 227, 212, 0.22) ;
+  border-radius: 18px;
+  @media screen  and (max-width: 767.98px){
+        width: fit-content;
+    }
+`
+export const StatisticsTitle = styled.h2`
+    font-size: 24px;    
+    margin:0;
+    margin-bottom: 18px;
+    color: #000000;
+`
 export const StatList = styled.ul`
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-`;
-
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+`
 export const StatItem = styled.li`
-  padding: 10px 5px;
-  width: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-export const Label = styled.span`
-  font-weight: 500;
-  font-size: 16px;
-`;
-
-export const Percentage = styled.span`
-  font-weight: 700;
-  font-size: 18px;
-  margin-top: 5px;
-`;
+    display: grid;
+    justify-items: center;
+    
+    padding: 6px;
+    :first-of-type{
+        border-radius: 12px 0 0 12px;
+    }
+    :last-child{
+        border-radius: 0 12px 12px 0;
+    }
+    @media screen  and (min-width: 768px){
+        width: 128px;
+    }
+`
+export const ItemLabel = styled.span`
+    font-weight: 400;
+    font-size: 12px;
+    color: #dcdcd5;
+`
+export const ItemPercentage = styled.span`
+    font-weight: 700;
+    font-size: 24px;
+    color: #ffffff;
+`

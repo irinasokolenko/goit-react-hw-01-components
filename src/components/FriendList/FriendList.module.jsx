@@ -9,5 +9,4 @@ export const FriendListWrapper = styled.ul`
     @media screen and (max-width: 424.98px){
         display: flex;
         margin: auto;
-    }
-`
+    }`
