@@ -1,18 +1,19 @@
-import PropTypes from 'prop-types';
-import { Item, Status, Avatar, Name } from '../FriendList/Friendlist.styled';
+import PropTypes from "prop-types";
 
-const FriendListItem = ({ avatar, name, isOnline }) => (
-  <Item>
-    <Status statusType={isOnline}></Status>
-    <Avatar src={avatar} alt="User avatar" width="48" />
-    <Name>{name}</Name>
-  </Item>
-);
+import { FriendImg, FriendItem, FriendName, FriendStatus } from "./FriendListItem.module";
+
+export const FriendListItem = ({status, avatar, name}) => {
+    return (
+        <FriendItem>
+            <FriendStatus>{status}</FriendStatus>
+            <FriendImg src={avatar} alt="User avatar" width="48" />
+            <FriendName>{name}</FriendName>
+        </FriendItem>
+    );
+}
 
 FriendListItem.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
-};
-
-export default FriendListItem;
+    status: PropTypes.bool,
+    avatar: PropTypes.string,
+    name: PropTypes.string
+}

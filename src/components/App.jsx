@@ -1,18 +1,17 @@
-import user from './assets/user.json';
-import Profile from './Profile/Profile';
+import user from '../assets/user.json';
+import data from '../assets/data.json';
+import friends from '../assets/friends.json';
+import transactions from '../assets/transactions.json';
 
-import data from './assets/data.json';
-import Statistics from './Statistics/Statistics.jsx';
+import { Profile } from "./Profile/Profile";
+import { Statistics } from './Statistics/Statistics';
+import { FriendList } from './FriendList/FriendList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+import { Container, Wrapper } from './App.module';
 
-import friends from './assets/friends.json';
-import FriendList from './FriendList/FriendList';
-
-import transactions from './assets/transactions.json';
-import TransactionHistory from './TransactionHistory/TransactionHistory';
-
-export default function App() {
+export const App = () => {
   return (
-    <div>
+    <Container>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -20,9 +19,22 @@ export default function App() {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Statistics title="Upload stats" stats={data} />
-      <FriendList friends={friends} />;
-      <TransactionHistory items={transactions} />;
-    </div>
+    
+      <Statistics 
+        title='UPLOAD STATS'
+        stats={data}
+      />
+
+      <Wrapper>
+        <FriendList
+        friends={friends}
+      />
+
+      <TransactionHistory
+        transactions={transactions} />
+      </Wrapper>
+    </Container>
+      
   );
-}
+
+};

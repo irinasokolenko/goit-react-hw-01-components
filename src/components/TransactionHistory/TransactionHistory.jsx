@@ -1,39 +1,37 @@
 import PropTypes from 'prop-types';
-import { TransactionHistoryTable } from './Transactionhistory.styled';
 
-const TransactionHistory = ({ items }) => {
-  return (
-    <TransactionHistoryTable>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
+import { TableTh, TableThead, TableTbody, TableTr, TransactionTable } from './Transactionhistory.styled';
 
-      <tbody>
-        {items.map(({ id, type, amount, currency }) => (
-          <tr key={id}>
-            <td>{type}</td>
-            <td>{amount}</td>
-            <td>{currency}</td>
-          </tr>
-        ))}
-      </tbody>
-    </TransactionHistoryTable>
-  );
-};
+export const TransactionHistory = ({transactions}) => {
+    return (
+        <TransactionTable>
+            <TableThead>
+                <TableTr>
+                    <TableTh>Type</TableTh>
+                    <TableTh>Amount</TableTh>
+                    <TableTh>Currency</TableTh>
+                </TableTr>
+            </TableThead>
+            <TableTbody>
+                {transactions.map(({ id, type, amount, currency }) => {
+                    return (<TableTr key={id}>
+                            <TableTh>{type}</TableTh>
+                            <TableTh>{amount}</TableTh>
+                            <TableTh>{currency}</TableTh>
+                        </TableTr>)  
+                    })
+                }
+            </TableTbody>
+        </TransactionTable>  
+    );
+}
 
 TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      amount: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
-    })
-  ).isRequired,
-};
-
-export default TransactionHistory;
+    transactions: PropTypes.arrayOf(PropTypes.shape(
+        {
+          type: PropTypes.string,
+          amount: PropTypes.number,
+          currency: PropTypes.string
+        }
+    )) 
+}
