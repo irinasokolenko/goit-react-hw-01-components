@@ -3,7 +3,7 @@ import { ItemLabel, ItemPercentage, StatisticsTitle, StatisticsWrapper, StatItem
 import getRandomHexColor from "./GetRandomColor";
 
 export const Statistics = ({ title, stats}) => {
-    return (
+    return(
         <StatisticsWrapper>
             {title && <StatisticsTitle>{title}</StatisticsTitle>}
             
