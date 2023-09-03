@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ItemLabel, ItemPercentage, StatisticsTitle, StatisticsWrapper, StatItem, StatList } from "./Statistics.styled";
+import { ItemLabel, ItemPercentage, StatisticsTitle, StatisticsWrapper, StatItem, StatList } from "./";
 import getRandomHexColor from "./GetRandomColor";
 
 export const Statistics = ({ title, stats}) => {
